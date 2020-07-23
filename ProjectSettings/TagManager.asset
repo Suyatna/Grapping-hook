@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hinge
   - DeadZone
+  - Platformer
+  - SafeArea
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Background
   - 
   - 
   - 
@@ -40,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3006410089
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

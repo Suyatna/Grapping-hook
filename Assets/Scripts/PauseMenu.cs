@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPause = false;
 
-    public GameObject PauseMenuUI;
-    
+    public GameObject pauseMenuUi;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,21 +25,23 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        PauseMenuUI.SetActive(false);
+        pauseMenuUi.SetActive(false);
         Time.timeScale = 1;
         GameIsPause = false;
     }
 
     private void Pause()
     {
-        PauseMenuUI.SetActive(true);
+        pauseMenuUi.SetActive(true);
         Time.timeScale = 0;
         GameIsPause = true;
     }
 
-    public void LoadMenu()
+    public void ResetScene()
     {
-        
+        Time.timeScale = 1;
+        GameIsPause = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Quit()

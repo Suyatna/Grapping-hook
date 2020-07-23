@@ -1,18 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+    
+    public Transform player;
+    
+    void Awake()
     {
+        Instance = this;
         
+        RespawnPlayer();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RespawnPlayer()
     {
-        
+        Instantiate(player, new Vector2(-9, 0), Quaternion.identity);
     }
 }
