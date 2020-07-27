@@ -8,6 +8,7 @@ TagManager:
   - DeadZone
   - Platformer
   - SafeArea
+  - Portal
   layers:
   - Default
   - TransparentFX

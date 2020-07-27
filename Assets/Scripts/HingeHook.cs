@@ -66,7 +66,7 @@ public class HingeHook : MonoBehaviour
 
         GameObject closest = null;
 
-        float distance = 100;
+        float distance = Mathf.Infinity;
         Vector3 position = transform.position;
 
         foreach (var go in hinges)
