@@ -6,6 +6,9 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPause = false;
 
     public GameObject pauseMenuUi;
+    public GameObject settingMenu;
+    public GameObject resolutionMenu;
+    public GameObject saveMenu;
 
     // Update is called once per frame
     void Update()
@@ -59,5 +62,37 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void ActivePauseMenu()
+    {
+        pauseMenuUi.SetActive(true);
+        settingMenu.SetActive(false);
+        resolutionMenu.SetActive(false);
+    }
+
+    public void ActiveSettingMenu()
+    {
+        pauseMenuUi.SetActive(false);
+        settingMenu.SetActive(true);
+        resolutionMenu.SetActive(false);
+    }
+    
+    public void ActiveResolutionMenu()
+    {
+        pauseMenuUi.SetActive(false);
+        settingMenu.SetActive(false);
+        resolutionMenu.SetActive(true);
+    }
+
+    public void SetResolutionSd()
+    {
+        Screen.SetResolution(640, 480, true);
+
+    }
+
+    public void SetResolutionHd()
+    {
+        Screen.SetResolution(1280, 720, true);
     }
 }
