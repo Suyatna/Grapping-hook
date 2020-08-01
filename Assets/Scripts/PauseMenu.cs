@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject resolutionMenu;
     public GameObject saveMenu;
 
+    public int level = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +28,19 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(level);
+    }
+
+    public void LoadLevel()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        SceneManager.LoadScene(data.level);
+        Time.timeScale = 1;
+        GameIsPause = false;
+    }
+    
     public void Resume()
     {
         pauseMenuUi.SetActive(false);
