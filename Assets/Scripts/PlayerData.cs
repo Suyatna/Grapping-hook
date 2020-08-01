@@ -1,12 +1,11 @@
-﻿using UnityEngine.Serialization;
-
-[System.Serializable]
+﻿[System.Serializable]
 public class PlayerData
 {
-    public int level;
+    public int[] slot;
 
-    public PlayerData(int level)
+    public PlayerData(int[] index)
     {
-        this.level = level;
+        slot = new int[5];
+        slot = index;
     }
 }

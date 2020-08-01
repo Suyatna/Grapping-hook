@@ -4,13 +4,13 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static void SavePlayer(int level)
+    public static void SavePlayer(int[] slot)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.pth";
         FileStream stream = new FileStream(path, FileMode.Create);
         
-        PlayerData data = new PlayerData(level);
+        PlayerData data = new PlayerData(slot);
         
         formatter.Serialize(stream, data);
         stream.Close();

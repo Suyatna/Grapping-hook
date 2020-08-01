@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,9 +11,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUi;
     public GameObject settingMenu;
     public GameObject resolutionMenu;
-    public GameObject saveMenu;
 
-    public int level = 0;
+    public int level;
+    
+    private int[] _slot;
 
     // Update is called once per frame
     void Update()
@@ -26,17 +30,27 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
+            foreach (var variable in data.slot)
+            {
+                Debug.Log(variable);
+            }
+        }
     }
 
-    public void SavePlayer()
+    public void SavePlayer(int index)
     {
-        SaveSystem.SavePlayer(level);
+        _slot[index] = level;
+        SaveSystem.SavePlayer(_slot);
     }
 
-    public void LoadLevel()
+    public void LoadLevel(int index)
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        SceneManager.LoadScene(data.level);
+        SceneManager.LoadScene(data.slot[index]);
         Time.timeScale = 1;
         GameIsPause = false;
     }
