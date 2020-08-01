@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,7 +10,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUi;
     public GameObject settingMenu;
     public GameObject resolutionMenu;
+    public GameObject loadingScreen;
 
+    public Slider slider;
+    
     public int level;
     
     private int[] _slot;
@@ -59,7 +61,9 @@ public class PauseMenu : MonoBehaviour
     public void LoadLevel(int index)
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        SceneManager.LoadScene(data.slot[index]);
+        
+        StartCoroutine(LoadAsynchronously(data.slot[index]));
+        
         Time.timeScale = 1;
         GameIsPause = false;
     }
@@ -85,21 +89,16 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Play()
-    {
-        Time.timeScale = 1;
-        GameIsPause = false;
-        SceneManager.LoadScene("Gameplay");
-    }
-    
     public void Exit()
     {
         Application.Quit();
     }
 
-    public void MainMenu()
+    public void LoadScene(int sceneIndex)
     {
-        SceneManager.LoadScene("Menu");
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+        Time.timeScale = 1;
+        GameIsPause = false;
     }
 
     public void ActivePauseMenu()
@@ -123,14 +122,19 @@ public class PauseMenu : MonoBehaviour
         resolutionMenu.SetActive(true);
     }
 
-    public void SetResolutionSd()
+    IEnumerator LoadAsynchronously(int sceneIndex)
     {
-        Screen.SetResolution(640, 480, true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
-    }
+        loadingScreen.SetActive(true);
+        
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
 
-    public void SetResolutionHd()
-    {
-        Screen.SetResolution(1280, 720, true);
+            slider.value = progress;
+
+            yield return null;
+        }
     }
 }

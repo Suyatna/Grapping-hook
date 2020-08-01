@@ -3,9 +3,9 @@ public class PlayerData
 {
     public int[] slot;
 
-    public PlayerData(int[] index)
+    public PlayerData(int[] player)
     {
         slot = new int[5];
-        slot = index;
+        slot = player;
     }
 }
