@@ -43,6 +43,15 @@ public class PauseMenu : MonoBehaviour
 
     public void SavePlayer(int index)
     {
+        PlayerData data = SaveSystem.LoadPlayer();
+        
+        _slot = new int[5];
+
+        for (int i = 0; i < data.slot.Length; i++)
+        {
+            _slot[i] = data.slot[i];
+        }
+        
         _slot[index] = level;
         SaveSystem.SavePlayer(_slot);
     }
