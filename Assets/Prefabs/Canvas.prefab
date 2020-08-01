@@ -1096,7 +1096,18 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715624078908295219}
+        m_MethodName: SetFullScreen
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &336283210
 GameObject:
@@ -1868,18 +1879,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 484157653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6476261224238201742}
-        m_MethodName: SetResolutionSd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &513439690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2407,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715624078908295219}
+        m_MethodName: SetResolution
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &735068713
 GameObject:
@@ -3763,6 +3774,7 @@ GameObject:
   - component: {fileID: 1804487889}
   - component: {fileID: 1804487891}
   - component: {fileID: 1804487890}
+  - component: {fileID: 7715624078908295219}
   m_Layer: 5
   m_Name: Gameplay
   m_TagString: Untagged
@@ -3831,6 +3843,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7715624078908295219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804487888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d810beaec2596418f6f624d343b9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 614484f0771d8f049ad6da087fbed0be, type: 2}
+  resolusi: {fileID: 688954342}
 --- !u!1 &1820579713
 GameObject:
   m_ObjectHideFlags: 0
@@ -4039,18 +4065,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1823430178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6476261224238201742}
-        m_MethodName: ActivePauseMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1915568007
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,13 +6619,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 3360699807727620954}
   m_HandleRect: {fileID: 7457687473721600287}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715624078908295219}
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3395997181890001992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6751,7 +6777,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715624078908295219}
+        m_MethodName: SetQuality
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &3522010407250965463
 GameObject:
@@ -11621,18 +11658,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3727b558bd344f4bb5294d54e66b78a, type: 3}
---- !u!114 &6021107601123148625 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3605082987058108073, guid: c3727b558bd344f4bb5294d54e66b78a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7028032789672793592}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6021107599926534227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3605082985930962347, guid: c3727b558bd344f4bb5294d54e66b78a,
@@ -11645,3 +11670,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7028032789672793592}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6021107601123148625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3605082987058108073, guid: c3727b558bd344f4bb5294d54e66b78a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7028032789672793592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

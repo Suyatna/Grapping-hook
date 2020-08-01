@@ -301,7 +301,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3746,7 +3746,6 @@ GameObject:
   - component: {fileID: 2385942872692765115}
   - component: {fileID: 2385942872692765109}
   - component: {fileID: 2385942872692765114}
-  - component: {fileID: 2385942872692765113}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -3754,20 +3753,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2385942872692765113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2385942872692765112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d810beaec2596418f6f624d343b9a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 614484f0771d8f049ad6da087fbed0be, type: 2}
-  resolusi: {fileID: 5336753871058874699}
 --- !u!114 &2385942872692765114
 MonoBehaviour:
   m_ObjectHideFlags: 0
