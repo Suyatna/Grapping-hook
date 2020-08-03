@@ -2,19 +2,21 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-    
-    public Transform player;
-    
-    void Awake()
-    {
-        Instance = this;
-        
-        RespawnPlayer();
-    }
+    public static GameManager Manager { get; private set; }
 
-    public void RespawnPlayer()
+    public string slot;
+    public bool isLoadScene;
+
+    private void Awake()
     {
-        Instantiate(player, new Vector2(-9, 0), Quaternion.identity);
+        if (Manager == null)
+        {
+            Manager = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

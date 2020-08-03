@@ -13,11 +13,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject loadingScreen;
 
     public Slider slider;
-    
-    public int level;
-    
-    private int[] _slot;
 
+    private int _sceneIndex;
+    
     // Update is called once per frame
     void Update()
     {
@@ -32,42 +30,8 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            PlayerData data = SaveSystem.LoadPlayer();
-            foreach (var variable in data.slot)
-            {
-                Debug.Log(variable);
-            }
-        }
     }
 
-    public void SavePlayer(int index)
-    {
-        PlayerData data = SaveSystem.LoadPlayer();
-        
-        _slot = new int[5];
-
-        for (int i = 0; i < data.slot.Length; i++)
-        {
-            _slot[i] = data.slot[i];
-        }
-        
-        _slot[index] = level;
-        SaveSystem.SavePlayer(_slot);
-    }
-
-    public void LoadLevel(int index)
-    {
-        PlayerData data = SaveSystem.LoadPlayer();
-        
-        StartCoroutine(LoadAsynchronously(data.slot[index]));
-        
-        Time.timeScale = 1;
-        GameIsPause = false;
-    }
-    
     public void Resume()
     {
         pauseMenuUi.SetActive(false);
@@ -84,6 +48,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResetScene()
     {
+        GameManager.Manager.isLoadScene = false;
+        
         Time.timeScale = 1;
         GameIsPause = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -96,9 +62,34 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadScene(int sceneIndex)
     {
+        GameManager.Manager.isLoadScene = false;
+        
         StartCoroutine(LoadAsynchronously(sceneIndex));
         Time.timeScale = 1;
         GameIsPause = false;
+    }
+
+    public void LoadFromData()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        _sceneIndex = data.saveSceneIndex;
+        
+        Debug.Log("scene: " + _sceneIndex);
+        
+        StartCoroutine(LoadAsynchronously(_sceneIndex));
+        Time.timeScale = 1;
+        GameIsPause = false;
+    }
+    
+    public void LoadSlot(string slot)
+    {
+        SaveSystem.LoadSlot = "/hook" + slot + ".fun";
+
+        GameManager.Manager.isLoadScene = true;
+        GameManager.Manager.slot = slot;
+        
+        LoadFromData();
     }
 
     public void ActivePauseMenu()

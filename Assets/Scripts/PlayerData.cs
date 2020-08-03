@@ -1,11 +1,18 @@
-﻿[System.Serializable]
+﻿using UnityEngine;
+
+[System.Serializable]
 public class PlayerData
 {
-    public int[] slot;
+    public int saveSceneIndex;
+    public float[] position;
 
-    public PlayerData(int[] player)
+    public PlayerData(Player player)
     {
-        slot = new int[5];
-        slot = player;
+        saveSceneIndex = player.saveSceneIndex;
+        
+        position = new float[3];
+        position[0] = player.transform.position.x;
+        position[1] = player.transform.position.y;
+        position[2] = player.transform.position.z;
     }
 }
