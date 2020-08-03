@@ -9,23 +9,25 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPause = false;
 
     public GameObject pauseMenuUi;
+    public GameObject menuUi;
     public GameObject settingMenu;
     public GameObject resolutionMenu;
     public GameObject loadingScreen;
-    public GameObject toggleFullScreen;
-    
+
     public Slider slider;
 
     private int _sceneIndex;
 
+    private bool _isMainMenu = true;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isMainMenu)
         {
             if (GameIsPause)
             {
-                Resume();                
+                Resume();
             }
             else
             {
@@ -64,13 +66,19 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadScene(int sceneIndex)
     {
-        GameManager.Manager.isLoadScene = false;
+        _isMainMenu = false;
         
         StartCoroutine(LoadAsynchronously(sceneIndex));
         Time.timeScale = 1;
         GameIsPause = false;
     }
 
+    public void LoadToMainMenu()
+    {
+        _isMainMenu = true;
+        StartCoroutine(LoadAsynchronously(0));
+    }
+    
     public void LoadFromData()
     {
         PlayerData data = SaveSystem.LoadPlayer();
@@ -91,14 +99,25 @@ public class PauseMenu : MonoBehaviour
         GameManager.Manager.isLoadScene = true;
         GameManager.Manager.slot = slot;
         
+        _isMainMenu = false;
+        
         LoadFromData();
     }
 
     public void ActivePauseMenu()
     {
-        pauseMenuUi.SetActive(true);
-        settingMenu.SetActive(false);
-        resolutionMenu.SetActive(false);
+        if (_isMainMenu)
+        {
+            menuUi.SetActive(true);
+            settingMenu.SetActive(false);
+            resolutionMenu.SetActive(false); 
+        }
+        else
+        {
+            pauseMenuUi.SetActive(true);
+            settingMenu.SetActive(false);
+            resolutionMenu.SetActive(false);   
+        }
     }
 
     public void ActiveSettingMenu()
