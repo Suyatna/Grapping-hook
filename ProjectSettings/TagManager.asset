@@ -9,6 +9,7 @@ TagManager:
   - Platformer
   - SafeArea
   - Portal
+  - Toggle
   layers:
   - Default
   - TransparentFX

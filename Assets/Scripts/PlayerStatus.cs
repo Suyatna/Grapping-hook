@@ -15,10 +15,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeadZone"))
         {
-            Debug.Log("Dead");
-            deadMenu.SetActive(true);
-            Time.timeScale = 0;
-            PauseMenu.GameIsPause = true;
+            PauseMenu.Instance.Death();
         }
         
         if (other.gameObject.CompareTag("SafeArea"))

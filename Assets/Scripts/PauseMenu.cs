@@ -1,24 +1,51 @@
 ﻿using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu Instance;
     public static bool GameIsPause = false;
 
     public GameObject pauseMenuUi;
     public GameObject menuUi;
     public GameObject settingMenu;
     public GameObject resolutionMenu;
+    public  GameObject deadMenu;
     public GameObject loadingScreen;
+    public GameObject saveButton;
 
     public Slider slider;
+
+    [Header("toggle")] public GameObject toggleFullScreen;
 
     private int _sceneIndex;
 
     private bool _isMainMenu = true;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        if (toggleFullScreen == null)
+        {
+            toggleFullScreen = GameObject.FindWithTag("Toggle");
+        }
+        else
+        {
+            Screen.fullScreen = toggleFullScreen.GetComponent<Toggle>().isOn;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -50,6 +77,13 @@ public class PauseMenu : MonoBehaviour
         GameIsPause = true;
     }
 
+    public void Death()
+    {
+        deadMenu.SetActive(true);
+        Time.timeScale = 0;
+        GameIsPause = true;
+    }
+    
     public void ResetScene()
     {
         GameManager.Manager.isLoadScene = false;
@@ -76,6 +110,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadToMainMenu()
     {
         _isMainMenu = true;
+        
         StartCoroutine(LoadAsynchronously(0));
     }
     
@@ -122,9 +157,19 @@ public class PauseMenu : MonoBehaviour
 
     public void ActiveSettingMenu()
     {
-        pauseMenuUi.SetActive(false);
-        settingMenu.SetActive(true);
-        resolutionMenu.SetActive(false);
+        if (_isMainMenu)
+        {
+            pauseMenuUi.SetActive(false);
+            settingMenu.SetActive(true);
+            resolutionMenu.SetActive(false);
+        }
+        else
+        {
+            pauseMenuUi.SetActive(false);
+            settingMenu.SetActive(true);
+            resolutionMenu.SetActive(false);
+            saveButton.SetActive(true);
+        }
     }
     
     public void ActiveResolutionMenu()

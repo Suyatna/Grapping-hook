@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class Options : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Dropdown resolution;
+    
     private Resolution[] _resolutions;
 
     public void SetVolume(float volume)
