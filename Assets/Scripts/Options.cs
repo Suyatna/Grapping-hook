@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Options : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Dropdown resolusi;
+    public Dropdown resolution;
     private Resolution[] _resolutions;
 
     public void SetVolume(float volume)
@@ -33,7 +33,7 @@ public class Options : MonoBehaviour
     private void Start()
     {
         _resolutions = Screen.resolutions;
-        resolusi.ClearOptions();
+        resolution.ClearOptions();
         
         List<string> options = new List<string>();
 
@@ -50,8 +50,8 @@ public class Options : MonoBehaviour
             }
         }
         
-        resolusi.AddOptions(options);
-        resolusi.value = currentResolutionIndex;
-        resolusi.RefreshShownValue();
+        resolution.AddOptions(options);
+        resolution.value = currentResolutionIndex;
+        resolution.RefreshShownValue();
     }
 }

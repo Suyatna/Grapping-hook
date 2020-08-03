@@ -129,5 +129,7 @@ public class PauseMenu : MonoBehaviour
 
             yield return null;
         }
+        
+        loadingScreen.SetActive(false);
     }
 }
