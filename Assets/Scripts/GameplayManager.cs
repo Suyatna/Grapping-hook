@@ -5,7 +5,7 @@ public class GameplayManager : MonoBehaviour
     public Transform player;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (GameManager.Manager.isLoadScene)
         {
@@ -26,6 +26,7 @@ public class GameplayManager : MonoBehaviour
         position.z = data.position[2];
 
         player.transform.position = position;
+        GameManager.Manager.isLoadScene = false;
     }
     
     public void LoadSlot(string slot)

@@ -12417,7 +12417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 614484f0771d8f049ad6da087fbed0be, type: 2}
-  resolution: {fileID: 0}
+  resolution: {fileID: 7715624078221448150}
 --- !u!223 &3671324838479082424
 Canvas:
   m_ObjectHideFlags: 0
