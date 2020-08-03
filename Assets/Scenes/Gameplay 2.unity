@@ -5302,6 +5302,11 @@ PrefabInstance:
       propertyPath: level
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6476261224238201742, guid: e124fb06e2a7de64c8985fcfe830d87a,
+        type: 3}
+      propertyPath: toggleFullScreen
+      value: 
+      objectReference: {fileID: 1645756250}
     - target: {fileID: 7131825407899883937, guid: e124fb06e2a7de64c8985fcfe830d87a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5327,6 +5332,12 @@ PrefabInstance:
 --- !u!1 &1645756249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6476261224695764843, guid: e124fb06e2a7de64c8985fcfe830d87a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1645756248}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645756250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 330146519, guid: e124fb06e2a7de64c8985fcfe830d87a,
     type: 3}
   m_PrefabInstance: {fileID: 1645756248}
   m_PrefabAsset: {fileID: 0}

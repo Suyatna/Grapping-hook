@@ -2698,6 +2698,11 @@ PrefabInstance:
       propertyPath: level
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6476261224238201742, guid: e124fb06e2a7de64c8985fcfe830d87a,
+        type: 3}
+      propertyPath: toggleFullScreen
+      value: 
+      objectReference: {fileID: 628623727}
     - target: {fileID: 7131825407899883937, guid: e124fb06e2a7de64c8985fcfe830d87a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2748,6 +2753,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd9321192157174589d62d38876cb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &628623727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 330146519, guid: e124fb06e2a7de64c8985fcfe830d87a,
+    type: 3}
+  m_PrefabInstance: {fileID: 628623724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &643386196
 GameObject:
   m_ObjectHideFlags: 0

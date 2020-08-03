@@ -562,6 +562,7 @@ MonoBehaviour:
   settingMenu: {fileID: 0}
   resolutionMenu: {fileID: 0}
   loadingScreen: {fileID: 0}
+  toggleFullScreen: {fileID: 0}
   slider: {fileID: 0}
 --- !u!1 &768511801
 GameObject:
@@ -1337,7 +1338,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5336753869961127552}
+      - m_Target: {fileID: 0}
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -1535,6 +1536,7 @@ MonoBehaviour:
   settingMenu: {fileID: 2385942871680936849}
   resolutionMenu: {fileID: 5336753869961127549}
   loadingScreen: {fileID: 1837662338026670846}
+  toggleFullScreen: {fileID: 5336753871435499642}
   slider: {fileID: 1837662336973711868}
 --- !u!224 &1436569235285184804
 RectTransform:
@@ -1634,6 +1636,7 @@ GameObject:
   - component: {fileID: 1436569235285184806}
   - component: {fileID: 1436569235285184807}
   - component: {fileID: 1436569235285184803}
+  - component: {fileID: 1436569235285184809}
   m_Layer: 5
   m_Name: Canvas (3)
   m_TagString: Untagged
@@ -1641,6 +1644,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1436569235285184809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436569235285184808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d810beaec2596418f6f624d343b9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 614484f0771d8f049ad6da087fbed0be, type: 2}
+  resolusi: {fileID: 5336753871058874699}
 --- !u!222 &1582063884160103765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5501,7 +5518,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5336753869961127552}
+      - m_Target: {fileID: 1436569235285184809}
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:
@@ -6699,7 +6716,6 @@ GameObject:
   - component: {fileID: 5336753869961127548}
   - component: {fileID: 5336753869961127550}
   - component: {fileID: 5336753869961127551}
-  - component: {fileID: 5336753869961127552}
   m_Layer: 5
   m_Name: Gameplay
   m_TagString: Untagged
@@ -6744,20 +6760,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5336753869961127552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5336753869961127549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d810beaec2596418f6f624d343b9a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 614484f0771d8f049ad6da087fbed0be, type: 2}
-  resolusi: {fileID: 5336753871058874699}
 --- !u!1 &5336753870009132800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8445,7 +8447,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5336753869961127552}
+      - m_Target: {fileID: 1436569235285184809}
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -9017,9 +9019,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5336753869961127552}
+      - m_Target: {fileID: 1436569235285184809}
         m_MethodName: SetFullScreen
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

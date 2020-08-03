@@ -9,7 +9,6 @@ public class Options : MonoBehaviour
     public Dropdown resolusi;
     private Resolution[] _resolutions;
 
-
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);

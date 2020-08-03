@@ -8633,6 +8633,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6476261224238201742, guid: e124fb06e2a7de64c8985fcfe830d87a,
+        type: 3}
+      propertyPath: checkFullScreen
+      value: 
+      objectReference: {fileID: 7715624078908295217}
+    - target: {fileID: 6476261224238201742, guid: e124fb06e2a7de64c8985fcfe830d87a,
+        type: 3}
+      propertyPath: toggleFullScreen
+      value: 
+      objectReference: {fileID: 7715624078908295218}
     - target: {fileID: 7131825407899883937, guid: e124fb06e2a7de64c8985fcfe830d87a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8645,3 +8655,21 @@ PrefabInstance:
       objectReference: {fileID: 2646416320500638210}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e124fb06e2a7de64c8985fcfe830d87a, type: 3}
+--- !u!114 &7715624078908295217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 330146521, guid: e124fb06e2a7de64c8985fcfe830d87a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7715624078908295216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715624078908295218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7715624078908295218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 330146519, guid: e124fb06e2a7de64c8985fcfe830d87a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7715624078908295216}
+  m_PrefabAsset: {fileID: 0}

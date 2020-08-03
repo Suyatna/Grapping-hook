@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,11 +12,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingMenu;
     public GameObject resolutionMenu;
     public GameObject loadingScreen;
-
+    public GameObject toggleFullScreen;
+    
     public Slider slider;
 
     private int _sceneIndex;
-    
+
     // Update is called once per frame
     void Update()
     {
