@@ -121,51 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &98014485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 98014487}
-  - component: {fileID: 98014486}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &98014486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98014485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1573b980166412647ba2e23c443b9cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: 
-  isLoadScene: 0
---- !u!4 &98014487
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98014485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112729669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,23 +1474,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2442001726516306280}
   m_CullTransparentMesh: 0
---- !u!114 &1436569235285184803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436569235285184808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd9321192157174589d62d38876cb59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUi: {fileID: 2385942872692765112}
-  settingMenu: {fileID: 2385942871680936849}
-  resolutionMenu: {fileID: 5336753869961127549}
-  loadingScreen: {fileID: 1837662338026670846}
-  slider: {fileID: 1837662336973711868}
 --- !u!224 &1436569235285184804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1633,7 +1571,7 @@ GameObject:
   - component: {fileID: 1436569235285184805}
   - component: {fileID: 1436569235285184806}
   - component: {fileID: 1436569235285184807}
-  - component: {fileID: 1436569235285184803}
+  - component: {fileID: 1436569235285184809}
   m_Layer: 5
   m_Name: Canvas (3)
   m_TagString: Untagged
@@ -1641,6 +1579,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1436569235285184809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436569235285184808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa6931bf4816a84a996558e3b93e98c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1837662338026670846}
+  slider: {fileID: 1837662336973711868}
 --- !u!222 &1582063884160103765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1692,7 +1644,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: ActivePauseMenu
         m_Mode: 1
         m_Arguments:
@@ -2368,7 +2320,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2463,7 +2415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1837662338026670847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2761,13 +2713,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2865,7 +2817,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: ActivePauseMenu
         m_Mode: 1
         m_Arguments:
@@ -3795,7 +3747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2385942872692765114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3891,7 +3843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: ActiveSettingMenu
         m_Mode: 1
         m_Arguments:
@@ -4255,7 +4207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -4465,7 +4417,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: ActiveResolutionMenu
         m_Mode: 1
         m_Arguments:
@@ -5085,7 +5037,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: SavePlayer
         m_Mode: 3
         m_Arguments:
@@ -5597,7 +5549,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: SavePlayer
         m_Mode: 3
         m_Arguments:
@@ -6246,7 +6198,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSlot
         m_Mode: 5
         m_Arguments:
@@ -8057,7 +8009,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSlot
         m_Mode: 5
         m_Arguments:
@@ -8650,7 +8602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: ActivePauseMenu
         m_Mode: 1
         m_Arguments:
@@ -8792,7 +8744,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSlot
         m_Mode: 5
         m_Arguments:
@@ -9369,7 +9321,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSlot
         m_Mode: 5
         m_Arguments:
@@ -9814,7 +9766,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSlot
         m_Mode: 5
         m_Arguments:
@@ -10937,7 +10889,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: SavePlayer
         m_Mode: 3
         m_Arguments:
@@ -11078,7 +11030,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: SavePlayer
         m_Mode: 3
         m_Arguments:
@@ -11150,7 +11102,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: ActivePauseMenu
         m_Mode: 1
         m_Arguments:
@@ -11796,7 +11748,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436569235285184803}
+      - m_Target: {fileID: 0}
         m_MethodName: SavePlayer
         m_Mode: 3
         m_Arguments:
