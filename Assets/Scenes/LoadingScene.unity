@@ -390,6 +390,7 @@ MonoBehaviour:
   settingMenu: {fileID: 0}
   resolutionMenu: {fileID: 0}
   deadMenu: {fileID: 0}
+  finishMenu: {fileID: 0}
   loadingScreen: {fileID: 0}
   saveButton: {fileID: 0}
   slider: {fileID: 0}

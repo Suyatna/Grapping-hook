@@ -193,28 +193,14 @@ public class PauseMenu : MonoBehaviour
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        operation.allowSceneActivation = false;
 
-        float waitTime = 0;
-        
-        loadingScreen.SetActive(true);
-        
         while (!operation.isDone)
         {
-            waitTime += 0.0015f;
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
 
-            if (waitTime >= 1)
-            {
-                operation.allowSceneActivation = true;
-            }
-            else
-            {
-                slider.value = waitTime;   
-            }
+            slider.value = progress;
 
             yield return null;
         }
-        
-        loadingScreen.SetActive(false);
     }
 }
