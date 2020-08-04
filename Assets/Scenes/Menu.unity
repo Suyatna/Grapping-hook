@@ -3803,6 +3803,7 @@ MonoBehaviour:
   saveButton: {fileID: 2385942872580215143}
   slider: {fileID: 1837662336973711868}
   toggleFullScreen: {fileID: 0}
+  player: {fileID: 0}
 --- !u!224 &1436569235285184804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7392,14 +7393,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1436569235285184803}
-        m_MethodName: SavePlayer
-        m_Mode: 3
+        m_MethodName: SaveSlot
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3033501281256850860
@@ -7904,14 +7905,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1436569235285184803}
-        m_MethodName: SavePlayer
-        m_Mode: 3
+        m_MethodName: SaveSlot
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &4086213321221476332
@@ -13339,14 +13340,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1436569235285184803}
-        m_MethodName: SavePlayer
-        m_Mode: 3
+        m_MethodName: SaveSlot
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &5967920392359606292
@@ -13480,14 +13481,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1436569235285184803}
-        m_MethodName: SavePlayer
-        m_Mode: 3
+        m_MethodName: SaveSlot
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6137189548638712450
@@ -14198,14 +14199,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1436569235285184803}
-        m_MethodName: SavePlayer
-        m_Mode: 3
+        m_MethodName: SaveSlot
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8107993122702611863

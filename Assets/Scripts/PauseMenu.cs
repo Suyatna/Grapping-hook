@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject menuUi;
     public GameObject settingMenu;
     public GameObject resolutionMenu;
-    public  GameObject deadMenu;
+    public GameObject deadMenu;
     public GameObject loadingScreen;
     public GameObject saveButton;
 
@@ -137,6 +137,15 @@ public class PauseMenu : MonoBehaviour
         _isMainMenu = false;
         
         LoadFromData();
+    }
+    
+    public void SaveSlot(string slot)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        
+        SaveSystem.SaveSlot = "/hook" + slot + ".fun";
+        
+        player.GetComponent<Player>().SavePlayer();
     }
 
     public void ActivePauseMenu()

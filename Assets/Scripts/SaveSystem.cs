@@ -34,7 +34,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("Save slot tidak ada" + path);
+            Debug.LogError("Save slot tidak ada " + path);
             return null;
         }
     }
