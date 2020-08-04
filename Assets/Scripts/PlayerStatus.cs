@@ -25,7 +25,13 @@ public class PlayerStatus : MonoBehaviour
 
         if (other.gameObject.CompareTag("Portal"))
         {
-            SceneManager.LoadScene(scene);
+            PauseMenu.Instance.LoadScene(scene);
+        }
+
+        if (other.gameObject.CompareTag("EndPortal"))
+        {
+            PauseMenu.Instance.LoadScene(scene);
+            PauseMenu.Instance.finishMenu.SetActive(true);
         }
     }
 

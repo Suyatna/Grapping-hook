@@ -10,6 +10,7 @@ TagManager:
   - SafeArea
   - Portal
   - Toggle
+  - EndPortal
   layers:
   - Default
   - TransparentFX

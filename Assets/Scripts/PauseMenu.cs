@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingMenu;
     public GameObject resolutionMenu;
     public GameObject deadMenu;
+    public GameObject finishMenu;
     public GameObject loadingScreen;
     public GameObject saveButton;
 
